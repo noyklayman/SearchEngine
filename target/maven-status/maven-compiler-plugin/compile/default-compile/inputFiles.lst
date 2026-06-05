@@ -1,0 +1,16 @@
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/util/ElasticSearch.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/crawler/Crawler.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/config/SwaggerConfig.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/model/CrawlerRecord.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/config/RedisConfig.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/model/UrlSearchDoc.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/kafka/Consumer.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/controller/AppController.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/model/StopReason.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/model/CrawlStatus.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/util/Dates.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/model/CrawlStatusOut.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/SearchengineApplication.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/model/CrawlerRequest.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/config/KafkaTopicConfig.java
+/root/noyka-searchengine/src/main/java/com/handson/searchengine/kafka/Producer.java
