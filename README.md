@@ -106,13 +106,3 @@ The application will start all required services including Kafka, Elasticsearch,
 * NLP-based content enrichment
 * Search result scoring
 * Advanced analytics dashboard
-
----
-
-## 👩‍💻 Author
-
-**Noy Klayman**
-
-B.Sc. Computer Science Graduate
-
-Passionate about backend development, distributed systems, search technologies, and scalable software architecture.
