@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SearchEngine | Distributed SearchEngine</title>
+  <link rel="stylesheet" href="/style.css?v=5">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Search Hub home">
+      <span class="brand-mark"><span>S</span></span>
+      <span>SearchEngine</span>
+    </a>
+    <nav>
+      <button class="nav-button active" data-view="search">Search</button>
+      <button class="nav-button" data-view="crawler">Crawler</button>
+    </nav>
+    <div class="system-pill"><span></span> Spring Boot API</div>
+  </header>
+
+  <main>
+    <section id="search-view" class="view active-view">
+      <div class="hero" id="home">
+        <div class="eyebrow">Distributed Search Engine</div>
+        <h1 class="main-logo">
+          <span class="logo-search">Search</span><span class="logo-engine">Engine</span>
+        </h1>
+        <p>Crawl, index and search websites using a distributed architecture.</p>
+
+        <form id="search-form" class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+          <input id="search-input" name="query" type="search" placeholder="Search indexed pages..." autocomplete="off" required>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <section id="results-section" class="results-section hidden" aria-live="polite">
+        <div class="results-header">
+          <div>
+            <p id="results-meta">Search results</p>
+            <h2 id="results-title">Results</h2>
+          </div>
+          <button id="clear-search" class="secondary-button">New search</button>
+        </div>
+        <div id="search-state"></div>
+        <div id="results-list" class="results-list"></div>
+      </section>
+    </section>
+
+    <section id="crawler-view" class="view">
+      <div class="dashboard-shell">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Crawler Control Center</div>
+            <h2>Index a website</h2>
+            <p>Choose a starting URL and set safe crawl limits.</p>
+          </div>
+        </div>
+
+        <div class="crawler-grid">
+          <form id="crawl-form" class="card crawl-form">
+            <label>
+              Starting URL
+              <input id="crawl-url" type="text" placeholder="https://spring.io" required>
+            </label>
+            <div class="form-row">
+              <label>
+                Maximum depth
+                <input id="max-distance" type="number" min="0" max="10" value="2" required>
+              </label>
+              <label>
+                Maximum pages
+                <input id="max-urls" type="number" min="1" max="5000" value="100" required>
+              </label>
+            </div>
+            <label>
+              Maximum duration (seconds)
+              <input id="max-seconds" type="number" min="5" max="3600" value="120" required>
+            </label>
+            <button class="primary-button" type="submit">Start Crawl</button>
+            <p class="form-note">Crawl tasks are processed through Kafka, while progress is tracked in Redis.</p>
+          </form>
+
+          <aside class="card status-card">
+            <div class="status-card-top">
+              <div>
+                <span class="status-label">Current crawl</span>
+                <h3 id="crawl-id">Ready</h3>
+              </div>
+              <span id="crawl-badge" class="badge idle">Idle</span>
+            </div>
+
+            <div class="metric-grid">
+              <article><span>Pages discovered</span><strong id="pages-count">0</strong></article>
+              <article><span>Current depth</span><strong id="distance-count">0</strong></article>
+              <article><span>Started</span><strong id="started-at">—</strong></article>
+              <article><span>Last update</span><strong id="last-update">—</strong></article>
+            </div>
+
+            <div class="progress-track"><div id="crawl-progress"></div></div>
+            <p id="crawl-message" class="crawl-message">Enter a starting URL to begin indexing.</p>
+          </aside>
+        </div>
+
+        <div class="architecture-grid">
+          <article class="tech-card"><span>01</span><h3>Spring Boot</h3><p>REST API receives crawl and search requests.</p></article>
+          <article class="tech-card"><span>02</span><h3>Kafka</h3><p>Pages are processed asynchronously through the queue.</p></article>
+          <article class="tech-card"><span>03</span><h3>Redis</h3><p>Crawl progress and visited URLs are tracked in memory.</p></article>
+          <article class="tech-card"><span>04</span><h3>Elasticsearch</h3><p>Indexed content is queried using full-text search.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Built by Noy Klayman · Java · Spring Boot · Kafka · Redis · Elasticsearch</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
